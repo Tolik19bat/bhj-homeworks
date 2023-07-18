@@ -3,6 +3,6 @@ const intervalId = setInterval(function () {
   timer.textContent -= 1;
   if (timer.textContent < 0) {
     clearInterval(intervalId);
-    alert("Вы победили в конкурсе");
+    alert("Вы победили в конкурсе!");
   }
 }, 1000);
