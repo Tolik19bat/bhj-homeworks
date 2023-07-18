@@ -1,6 +1,6 @@
 const elementImg = document.getElementById("cookie");
 
-function size() {
+function sizeCount() {
   const counter = document.getElementById("clicker__counter");
   counter.textContent = +counter.textContent + 1;
   elementImg.width = "250";
@@ -8,4 +8,4 @@ function size() {
     elementImg.width = "200";
   }, 500);
 }
-elementImg.onclick = size;
+elementImg.onclick = sizeCount;
