@@ -4,13 +4,16 @@ const element = document.getElementsByClassName("hole_has-mole");
 function getHole() {}
 
   for (let i of hole) {
-    if (i) {
-      console.log(hole[i]);
-    }
+		[i].onclick = function() {
+			alert('клик')
+
+		}
+
+      console.log([i]);
+    
   }
 
 
-hole.onclick = getHole;
 // alert(element)
 // function click() {
 // 	alert('Клик');
