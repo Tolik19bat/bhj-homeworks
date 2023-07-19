@@ -1,17 +1,14 @@
 const hole = document.getElementsByClassName("hole");
 const element = document.getElementsByClassName("hole_has-mole");
 
-function getHole() {
-	const holeUp = document.g
-}
+function getHole() {}
 
-for (let i of hole) {
-	
-	
-	if (i) {
-		console.log(i);
-	}
-}
+  for (let i of hole) {
+    if (i) {
+      console.log(hole[i]);
+    }
+  }
+
 
 hole.onclick = getHole;
 // alert(element)
