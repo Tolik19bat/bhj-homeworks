@@ -18,9 +18,9 @@ class Game {
 
   registerEvents() {
     window.addEventListener("keydown", (event) => {
-			let letterCurrent = this.currentSymbol.textContent.toUpperCase();//получаем текущую букву заглавной.
+      let letterCurrent = this.currentSymbol.textContent.toUpperCase(); //получаем текущую букву заглавной.
       let key = event.key;
-      key = key.toUpperCase();                                         //получаем нажатую букву заглавной
+      key = key.toUpperCase(); //получаем нажатую букву заглавной
       if (letterCurrent === key) {
         this.success();
       } else {
@@ -28,7 +28,7 @@ class Game {
       }
     });
   }
-	
+
   success() {
     if (this.currentSymbol.classList.contains("symbol_current"))
       this.currentSymbol.classList.remove("symbol_current");
