@@ -20,7 +20,7 @@ class Game {
     let letterCurrent = this.currentSymbol.textContent.toUpperCase();
     console.log(letterCurrent);
 
-    document.addEventListener("keydown", function (event) {
+    addEventListener("keydown", function (event) {
       let key = event.key;
       key = key.toUpperCase();
       console.log(key);
