@@ -17,13 +17,10 @@ class Game {
   }
 
   registerEvents() {
-    let letterCurrent = this.currentSymbol.textContent.toUpperCase();
-    console.log(letterCurrent);
-
-    addEventListener("keydown", function (event) {
+    window.addEventListener("keydown", (event) => {
+			let letterCurrent = this.currentSymbol.textContent.toUpperCase();//получаем текущую букву заглавной.
       let key = event.key;
-      key = key.toUpperCase();
-      console.log(key);
+      key = key.toUpperCase();                                         //получаем нажатую букву заглавной
       if (letterCurrent === key) {
         this.success();
       } else {
@@ -31,15 +28,7 @@ class Game {
       }
     });
   }
-  /*
-      TODO:
-      Написать обработчик события, который откликается
-      на каждый введённый символ.
-      В случае правильного ввода слова вызываем this.success()
-      При неправильном вводе символа - this.fail();
-      DOM-элемент текущего символа находится в свойстве this.currentSymbol.
-     */
-
+	
   success() {
     if (this.currentSymbol.classList.contains("symbol_current"))
       this.currentSymbol.classList.remove("symbol_current");
