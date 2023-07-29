@@ -1,6 +1,4 @@
 const arrayText = Array.from(document.querySelectorAll(".rotator__case"));
-console.log(arrayText);
-
 let element = 0;
 
 setInterval(() => {
