@@ -12,4 +12,5 @@ setInterval(() => {
   if (element === arrayText.length) {
     element = 0;
   }
+	arrayText[element].style.color = arrayText[element].dataset.color;
 }, 1000);
