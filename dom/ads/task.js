@@ -8,7 +8,6 @@ setInterval(() => {
     el.classList.remove("rotator__case_active");
   });
   arrayText[element].classList.toggle("rotator__case_active");
-  console.log(arrayText[element]);
 
   element += 1;
 
