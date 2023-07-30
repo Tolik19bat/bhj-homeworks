@@ -50,7 +50,7 @@ for (let indexButton = 0; indexButton < buttonColorText.length; indexButton++) {
   });
 }
 // кнопки цвета фона
-const page = document.querySelector('.book');
+const page = document.querySelector('.book');// доступ к фону страницы
 const parentObjectBackground = document.querySelector(".book__control_background"); //родительский элемент
 const buttonBackground = Array.from(parentObjectBackground.getElementsByTagName("a")); // объект с тегами <a>
 
