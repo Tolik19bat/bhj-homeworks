@@ -1,16 +1,14 @@
-const message = document.querySelector(".reveal");
+const messages = Array.from(document.querySelectorAll('.reveal'));// массив элементов
+const windowHeight = window.innerHeight;// высота окна
 
-function isVisible(element) {
-	const { top, bottom } = element.getBoundingClientRect()
-	if (bottom < 0) {
-		message.classList.remove('reveal_active')
-	} else if (top > innerHeight) {
-		message.classList.remove('reveal_active')
-	} else {
-		message.classList.add('reveal_active')
-	}
-}
+document.addEventListener('scroll', function () {
+	messages.forEach((element) => {
+		element.classList.remove('reveal_active');
 
-setInterval(() => {
-	isVisible(message)
-}, 1000);
+		if (element.getBoundingClientRect().top < windowHeight) {
+			element.classList.add('reveal_active');
+		}
+	});
+});
+console.log(messages)
+console.log(windowHeight)
