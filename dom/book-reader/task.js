@@ -78,3 +78,10 @@ for(let indexButton = 0; indexButton < buttonBackground.length; indexButton++) {
 		}
 })
 }
+
+// const size = event.target.dataset.size;
+// if (size) {
+// reader.className = `book__content book_fs-${size}`;
+// } else {
+// reader.className = "book__content";
+// }
