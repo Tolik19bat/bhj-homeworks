@@ -1,33 +1,33 @@
-let products = document.querySelectorAll(".product"); //получаем массив продуктов
+let products = Array.from(document.querySelectorAll(".product")); //получаем массив продуктов
 let cartProducts = document.querySelector(".cart__products"); //корзина для товаров
-
+console.log(products)
 function addProducts(event) {
-  const element = event.target.closest(".product");
-  console.log(`element : ${element}`);
+  const element = event.target.closest(".product");//получаем нажатый элемент
+  console.log(element);
 
-  const elementId = element.dataset.id;
-  console.log(`elementId : ${elementId}`);
+  const elementId = element.dataset.id;//извлекаем из него id
+  // console.log(`elementId : ${elementId}`);
 
-  const img = element.querySelector(".product__image").src;
-  console.log(`img : ${img}`);
+  const img = element.querySelector(".product__image").src;//извлекаем из него путь к img
+  // console.log(`img : ${img}`);
 
-  let inCart = cartProducts.querySelector(
+  let inCart = cartProducts.querySelector(//проверяем наличие товара в корзине
     `.cart__product[data-id="${elementId}"]`
   );
-  console.log(`inCart : ${inCart}`);
+  // console.log(`inCart : ${inCart}`);
 
-  if (inCart) {
-    const count = inCart.querySelector(".cart__product-count");
-    console.log(`count : ${count}`);
+  if (inCart) {//если товар в корзине есть то...
+    const count = inCart.querySelector(".cart__product-count");//получаем элемент счётчика
+    // console.log(`count : ${count}`);
 
-    const currentCount = parseInt(count.textContent);
+    const currentCount = parseInt(count.textContent);//извлекаем цыфры счётчика
     // console.log(`currentCount : ${currentCount}`)
 
     const input = element.querySelector(".product__quantity-value");
     // console.log(`input : ${input}`)
 
     const select = parseInt(input.textContent);
-    // console.log(`select : ${select}`)
+    // console.log(`select : ${select}`);
 
     count.textContent = currentCount + select;
   } else {
@@ -50,7 +50,7 @@ function addProducts(event) {
     countProduct.classList.add("cart__product-count");
 
     const input = element.querySelector(".product__quantity-value");
-    // console.log(`input : ${input}`)
+    console.log(`input : ${input}`)
 
     const select = parseInt(input.textContent);
     // console.log(`select : ${select}`)
