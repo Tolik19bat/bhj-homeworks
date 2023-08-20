@@ -3,6 +3,7 @@ form.type = "submit";//добавляем форме метод submit
 const text = document.getElementById("task__input");
 text.setAttribute("required", true);//добавляем атрибут для инпута
 const tasks = document.getElementById("tasks__list");
+let task = document.getElementsByClassName('task')
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
@@ -29,7 +30,8 @@ form.addEventListener("submit", (e) => {
       remove[index].addEventListener("click", (e) => {//при клике на ссылку
         e.preventDefault();
         // e.stopPropagation();
-        task.remove();//удаляем задачу
+				console.log(e)
+        tasks.removeChild(e);//удаляем задачу
       });
     }
   form.reset();//при добавлении задачи форма очищается
