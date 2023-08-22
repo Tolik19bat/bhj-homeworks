@@ -3,11 +3,9 @@ form.type = "submit";//добавляем форме метод submit
 const text = document.getElementById("task__input");
 text.setAttribute("required", true);//добавляем атрибут для инпута
 const tasks = document.getElementById("tasks__list");
-let task = document.getElementsByClassName('task')
 
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  // e.stopPropagation();
+form.addEventListener("submit", (event) => {
+  event.preventDefault();
 
   const task = document.createElement("div");//создаём див
   tasks.prepend(task);
@@ -23,16 +21,12 @@ form.addEventListener("submit", (e) => {
   taskRemove.href = "#";
   taskRemove.className = "task__remove";
   taskRemove.textContent = "x";
-
-	const remove = Array.from(document.getElementsByClassName("task__remove"));//массив открытых задач
-
-  for (let index = 0; index < remove.length; index++) {//цикл
-      remove[index].addEventListener("click", (e) => {//при клике на ссылку
-        e.preventDefault();
-        // e.stopPropagation();
-				console.log(e)
-        tasks.removeChild(e);//удаляем задачу
-      });
-    }
   form.reset();//при добавлении задачи форма очищается
 });
+
+tasks.addEventListener('click', function (event) {
+	event.preventDefault();
+	const remove = event.target;//получаем нажатый элемент
+	let deleteElement = remove.closest('.task');//получаем ближайшего родителя элемента 
+	deleteElement.remove();//удаляем родителя
+})
