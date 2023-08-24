@@ -2,31 +2,30 @@ let products = Array.from(document.querySelectorAll(".product")); //получа
 let cartProducts = document.querySelector(".cart__products"); //корзина для товаров
 
 products.forEach((element) => {  //к каждому элементу массива
-  const minus = element.querySelector(".product__quantity-control_dec");
-  const plus = element.querySelector(".product__quantity-control_inc");
+	const minus = element.querySelector(".product__quantity-control_dec");
+	const plus = element.querySelector(".product__quantity-control_inc");
 
-  minus.addEventListener("click", () => {
-    //устанавливаем обработчик на элемент минус
-    const input = element.querySelector(".product__quantity-value");
+	minus.addEventListener("click", () => {		//устанавливаем обработчик на элемент минус
+		const input = element.querySelector(".product__quantity-value");
 
-    let quantity = parseInt(input.textContent);
+		let quantity = parseInt(input.textContent);
 
-    if (quantity > 1) {
-      quantity--;
-      input.textContent = quantity;
-    }
-  });
+		if (quantity > 1) {
+			quantity--;
+			input.textContent = quantity;
+		}
+	});
 
-  plus.addEventListener("click", () => {    //и обработчик на плюс
-    const input = element.querySelector(".product__quantity-value");
+	plus.addEventListener("click", () => {    //и обработчик на плюс
+		const input = element.querySelector(".product__quantity-value");
 
-    let quantity = parseInt(input.textContent);
-    quantity++;
-    input.textContent = quantity;
-  });
+		let quantity = parseInt(input.textContent);
+		quantity++;
+		input.textContent = quantity;
+	});
 
-  const button = element.querySelector(".product__add");
-  button.addEventListener("click", function (event) {
+	const button = element.querySelector(".product__add");
+	button.addEventListener("click", function (event) {
 		//функция создания и добавления товара в корзину
 		const element = event.target.closest(".product"); //получаем родителя нажатого элемента
 		const elementId = element.dataset.id; //извлекаем из него id
