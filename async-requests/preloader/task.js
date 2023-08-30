@@ -1,21 +1,23 @@
 const items = document.getElementById("items");
 const loader = document.getElementById("loader");
 
-const xhr = new XMLHttpRequest();
-xhr.open(
+const xhr = new XMLHttpRequest();//создаём экземпляр объекта с http запросом
+console.log(xhr)
+xhr.open(       //создаём запрос асинхронно на открытие соединения
   "GET",
   "https://students.netoservices.ru/nestjs-backend/slow-get-courses"
 );
-xhr.send();
+xhr.send();     //открываем соединение и отправляем запрос
 
-xhr.onreadystatechange = function () {
-  if (xhr.readyState === 4) {// если у объекта статус 4
-    loader.classList.remove("loader_active");//скрываем значёк подгрузки
+xhr.onreadystatechange = function () { // вешаем на объект событие
+  if (xhr.readyState === 4) {          // если объект готов
+
+    loader.classList.remove("loader_active"); //скрываем значёк подгрузки
 
     let object = JSON.parse(xhr.response).response.Valute; //читаем значение свойства Valute и создаём объект с помощью форматирования JSON
 
-    for (let key in object) {//для каждого индекса в объекте
-			//присваеваем html код со значениями объявляя свойства объекта
+    for (let key in object) {          //для каждого индекса в объекте
+      //присваеваем html код со значениями объявляя нужные свойства объекта
       items.innerHTML += `<div class="item">
       <div class = "item__code">
         ${object[key].CharCode}
