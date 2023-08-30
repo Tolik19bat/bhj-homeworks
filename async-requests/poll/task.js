@@ -1,11 +1,13 @@
 const pollTitle = document.querySelector(".poll__title");
 const pollAnswer = document.querySelector(".poll__answers");
-const xhr = new XMLHttpRequest(); //создаём экземпляр объекта с http запросом
 
+const xhr = new XMLHttpRequest(); //создаём экземпляр объекта с http запросом
+console.log(xhr)
 xhr.open(                  //создаём запрос асинхронно на открытие соединения
 	"GET",
   "https://students.netoservices.ru/nestjs-backend/poll");
 xhr.send();                //открываем соединение и отправляем запрос
+
 
 xhr.onreadystatechange = function () { // вешаем на объект событие
   if (xhr.readyState === 4) {          // если объект готов
